@@ -7,6 +7,6 @@ public class EnemySO : ScriptableObject
 {
     //day la nhung thuoc tinh cua vien dan
     public int IdEnemy;
-    public Sprite image;
+    public string nameEnemy;
     public List<LeverEnemy> leverEnemy;
 }

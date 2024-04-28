@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: EnemySO_one
   m_EditorClassIdentifier: 
   IdEnemy: 0
-  image: {fileID: 0}
+  nameEnemy: ShipRank1
+  leverEnemy:
+  - NameLeverEnemy: 1
+    HpMax: 20

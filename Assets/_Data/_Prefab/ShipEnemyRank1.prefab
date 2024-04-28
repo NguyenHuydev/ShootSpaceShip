@@ -157,7 +157,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1457713427459145262}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1a5c55c4fa5c7843b170d52a5677647, type: 3}
   m_Name: 
@@ -391,12 +391,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1657961001037117149}
   m_Layer: 0
-  m_Name: ShipEnemy_Red
-  m_TagString: Untagged
+  m_Name: ShipEnemyRank1
+  m_TagString: ShipEnemyRank1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1657961001037117149
 Transform:
   m_ObjectHideFlags: 0
@@ -416,7 +416,7 @@ Transform:
   - {fileID: 3645567260439935330}
   - {fileID: 2622872585403337124}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3781888773118644246
 GameObject:
@@ -503,9 +503,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   circleCollider: {fileID: 7358704526330459373}
   rigidbodyBullet: {fileID: 4879016004291362428}
-  hp: 0
-  hpMin: 10
-  hpMax: 20
+  typeEnemy: 0
+  _hPcurrent: 0
+  _hpMax: 0
   typeFx: 0
 --- !u!58 &7358704526330459373
 CircleCollider2D:
@@ -610,6 +610,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8339964032088386547}
   - component: {fileID: 1780122355926202623}
+  - component: {fileID: 1849750079358754938}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -691,6 +692,22 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1849750079358754938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5390472244103742315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b04eeaa3770ab942ad8dd1a5a12f1d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderhp: {fileID: 0}
+  maxHp: 0
+  currentHp: 0
+  damReceiveEnemy: {fileID: 5298620953943275512}
 --- !u!1 &6085909924092471388
 GameObject:
   m_ObjectHideFlags: 0

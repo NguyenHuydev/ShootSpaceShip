@@ -11,6 +11,7 @@ public class LeverBullet
     public float speedfly;
     public float speedfire;
 }
+[Serializable]
 public class LeverEnemy
 {
     public string NameLeverEnemy;

@@ -9,18 +9,15 @@ public class EnemyManager : MonoBehaviour
     public static EnemyManager Instance { get => _instance; }
     /**********************************************************************/
 
-    [SerializeField] protected List<EnemySO> EnemySO;
-    /// <summary>
-    /// 
-    /// </summary>
+    [SerializeField] public List<EnemySO> EnemySO;
+
+
 
     /**********************************************************************/
-    [SerializeField] private int _indexEnemy;
-    public int IndexEnemy => _indexEnemy;
+
     [SerializeField] private int _indexEnemyLever;
     public int IndexEnemyLever => _indexEnemyLever;
-    [SerializeField] private float _enemyHPMax;
-    public float EnemyHpMax => _enemyHPMax;
+
 
 
     private void Awake()
@@ -29,12 +26,6 @@ public class EnemyManager : MonoBehaviour
         EnemyManager._instance = this;
     }
 
-    private void Start()
-    {
-        //this._indexBullet = BulletManager.Instance.BulletSO[1].leverbullet[0].damege;
-        this._indexEnemy = 0;
-        this._indexEnemyLever = 0;
-    }
 
     protected void Update()
     {
@@ -43,7 +34,7 @@ public class EnemyManager : MonoBehaviour
 
     private void LoadValue()
     {
-        this._enemyHPMax
-            = EnemyManager.Instance.EnemySO[this._indexEnemy].leverEnemy[_indexEnemyLever].HpMax;
+/*        this._enemyHPMax
+            = EnemyManager.Instance.EnemySO[this._indexEnemy].leverEnemy[_indexEnemyLever].HpMax;*/
     }
 }

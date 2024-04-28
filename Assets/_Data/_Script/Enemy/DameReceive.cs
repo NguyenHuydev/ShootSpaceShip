@@ -1,5 +1,6 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -9,10 +10,11 @@ public class DameReceive : MonoBehaviour
     [SerializeField] protected CircleCollider2D circleCollider;
     [SerializeField] protected Rigidbody2D rigidbodyBullet;
 
-
-    [SerializeField] private float hp;
-    [SerializeField] private float hpMin = 10f;
-    [SerializeField] private float hpMax = 20f;
+    [SerializeField] private int typeEnemy;
+    [SerializeField] private float _hPcurrent;
+    public float HPcurrent => _hPcurrent;
+    [SerializeField] private float _hpMax;
+    public float HPMAx => _hpMax;
     [SerializeField] private int typeFx;
     /*=========================================================================*/
     private void Reset()
@@ -22,6 +24,7 @@ public class DameReceive : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        
         Reborn();
 
     }
@@ -30,6 +33,7 @@ public class DameReceive : MonoBehaviour
     void Update()
     {
         DestroyObject();
+        
     }
     protected virtual void LoadComponents()
     {
@@ -53,28 +57,58 @@ public class DameReceive : MonoBehaviour
         this.rigidbodyBullet.isKinematic = true;
     }
 
+    protected string GetNameGameobject()
+    {
+        string objectName = gameObject.transform.parent.name;
+        return objectName;
+    }
+    protected void GetTypeEnemy()
+    {
+        string namObjecttemp = GetNameGameobject();
+        switch (namObjecttemp)
+        {
+            case "ShipEnemyRank1(Clone)":
+                this.typeEnemy = 0;
+                break;
+            case "ShipEnemyRank2(Clone)":
+                this.typeEnemy = 1;
+                break;
+            case "ShipEnemyRank3(Clone)":
+                this.typeEnemy = 2;
+                break;
+
+            default:
+                break;
+        }
+
+    }
+
     protected virtual void Reborn()
     {
-        this.hp = Random.Range(this.hpMin, this.hpMax);
+        GetTypeEnemy();
+        int indexLeverEneymy = EnemyManager.Instance.IndexEnemyLever;
+        Debug.Log("index laf bao nhieu sau:" + indexLeverEneymy);
+        this._hpMax = EnemyManager.Instance.EnemySO[typeEnemy].leverEnemy[indexLeverEneymy].HpMax;
+        this._hPcurrent =this._hpMax;
         typeFx = 0;
     }
 
     public virtual void Deduct(float deduct)
     {
         
-        this.hp -= deduct;
-        if (this.hp < 0) this.hp = 0;
+        this._hPcurrent -= deduct;
+        if (this._hPcurrent < 0) this._hPcurrent = 0;
         
     }
 
     protected virtual bool Isdead()
     {
-        return this.hp <= 0;
+        return this._hPcurrent <= 0;
     }
 
     protected virtual void DestroyObject()
     {
-        if (hp <= 0)
+        if (_hPcurrent <= 0)
         {
             Destroy(transform.parent.gameObject);
             Transform newprefab = FXSpawner.Instance.Spawn(transform.parent.position, typeFx);
