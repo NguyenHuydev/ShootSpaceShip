@@ -30,13 +30,15 @@ public class DameSender : MonoBehaviour
     {
         dameRecevie.Deduct(BulletManager.Instance.BulletDamege);
         this.DestroyObject();
+
     }
 
     protected virtual void DestroyObject()
     {
         Transform newprefab = FXSpawner.Instance.Spawn(transform.parent.position, typeFx);// spawn enemy
         newprefab.gameObject.SetActive(true);
-        Destroy(transform.parent.gameObject);
+        //Destroy(transform.parent.gameObject);
+        BulletSpawner.Instance.DesPawnOfPool(transform.parent);
 
     }
 }

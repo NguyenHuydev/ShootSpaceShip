@@ -396,7 +396,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1657961001037117149
 Transform:
   m_ObjectHideFlags: 0
@@ -506,6 +506,7 @@ MonoBehaviour:
   typeEnemy: 0
   _hPcurrent: 0
   _hpMax: 0
+  _scoreEnemy: 0
   typeFx: 0
 --- !u!58 &7358704526330459373
 CircleCollider2D:
@@ -539,9 +540,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.048526943, y: 0}
+  m_Offset: {x: -0.009580195, y: 0}
   serializedVersion: 2
-  m_Radius: 0.05
+  m_Radius: 0.21477461
 --- !u!50 &4879016004291362428
 Rigidbody2D:
   serializedVersion: 4

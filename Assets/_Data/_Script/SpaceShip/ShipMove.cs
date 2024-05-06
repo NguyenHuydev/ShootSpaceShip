@@ -22,6 +22,7 @@ public class ShipMove : MonoBehaviour
     void Update()
     {
         GetTargetPosition();
+        ShipMoveStart();
         Invoke("Moving", 3f);
        // Moving();
     }

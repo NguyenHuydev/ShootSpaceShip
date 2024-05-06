@@ -17,5 +17,5 @@ MonoBehaviour:
   leverbullet:
   - NameLever: 1
     damege: 3
-    speedfly: 4
-    speedfire: 0.03
+    speedfly: 30
+    speedfire: 0.05

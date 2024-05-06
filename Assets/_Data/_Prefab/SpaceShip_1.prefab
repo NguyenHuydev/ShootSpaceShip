@@ -103,16 +103,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2228703702907705640}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29134d2bc62030541884aa210c05bda9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   circleCollider: {fileID: 2110153950793689676}
   rigidbodyBullet: {fileID: 6690978176939423026}
-  hp: 0
-  hpMin: 10
-  hpMax: 20
+  typeEnemy: 0
+  _hPcurrent: 0
+  _hpMax: 0
   typeFx: 0
 --- !u!1 &3529014947122122752
 GameObject:
@@ -237,7 +237,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3649599158909617950}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d0fcae3874e96341a15ff224f34118b, type: 3}
   m_Name: 
@@ -278,7 +278,7 @@ Transform:
   - {fileID: 6227502127296423164}
   - {fileID: 7400013536892357892}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7778263194712688326
 GameObject:

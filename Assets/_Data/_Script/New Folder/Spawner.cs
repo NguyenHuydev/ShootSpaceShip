@@ -7,9 +7,10 @@ public abstract class Spawner : MonoBehaviour
     [SerializeField] protected Transform holder;
     [SerializeField] protected List<Transform> prefabSpawner;
 
-/*    [SerializeField] protected int spawnerCount;
-    [SerializeField] public int SpawnerCount { get => spawnerCount; }*/
-    
+
+    /*    [SerializeField] protected int spawnerCount;
+        [SerializeField] public int SpawnerCount { get => spawnerCount; }*/
+
     protected virtual void Reset()
     {
         this.LoadComponent();

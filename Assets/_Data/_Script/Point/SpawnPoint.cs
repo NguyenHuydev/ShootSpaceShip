@@ -11,6 +11,7 @@ public class SpawnPoint : LoadPoint
     public Transform GetRamdomPoint()
     {
         int rand = Random.Range(1, 5);
+        
         return Point[rand];
        
     }

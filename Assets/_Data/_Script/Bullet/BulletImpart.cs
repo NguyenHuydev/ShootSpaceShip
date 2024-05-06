@@ -11,7 +11,7 @@ public class BulletImpart : MonoBehaviour
     [SerializeField] protected DameSender dameSender;
     protected void Awake()
     {
-        this.dameSender = FindObjectOfType<DameSender>();
+        LoadDameSender();
     }
     private void Reset()
     {
@@ -23,6 +23,14 @@ public class BulletImpart : MonoBehaviour
     {
         LoadCollider();
         LoadRigibody2D();
+        
+    }
+
+    protected virtual void LoadDameSender()
+    {
+        if (this.dameSender != null) return;
+        this.dameSender = FindObjectOfType<DameSender>();
+        if (dameSender == null) Debug.LogWarning("dameSender of Scrpit BulletIMpart Null");
     }
 
     protected virtual void LoadCollider()

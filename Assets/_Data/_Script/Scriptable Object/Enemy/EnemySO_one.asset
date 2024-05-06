@@ -17,3 +17,4 @@ MonoBehaviour:
   leverEnemy:
   - NameLeverEnemy: 1
     HpMax: 20
+    Score: 60

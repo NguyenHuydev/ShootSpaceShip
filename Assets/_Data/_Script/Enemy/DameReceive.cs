@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CircleCollider2D))]
@@ -13,14 +15,26 @@ public class DameReceive : MonoBehaviour
     [SerializeField] private int typeEnemy;
     [SerializeField] private float _hPcurrent;
     public float HPcurrent => _hPcurrent;
+
     [SerializeField] private float _hpMax;
     public float HPMAx => _hpMax;
+    [SerializeField] private int _scoreEnemy;
+    public float ScoreEnemy => _scoreEnemy;
+
     [SerializeField] private int typeFx;
     /*=========================================================================*/
+    private ScoreManager gameManager;
+
     private void Reset()
     {
         LoadComponents();
     }
+
+    private void Awake()
+    {
+        LoadGameManager();
+    }
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -40,6 +54,14 @@ public class DameReceive : MonoBehaviour
         LoadCollider();
         LoadRigibody2D();
     }
+
+    private void LoadGameManager()
+    {
+        if (gameManager != null) return;
+        gameManager = FindObjectOfType<ScoreManager>();
+        if (gameManager == null) Debug.Log("gameManager of "+transform.name+"Null");
+    }
+
     protected virtual void LoadCollider()
     {
         if (this.circleCollider != null) return;
@@ -87,11 +109,13 @@ public class DameReceive : MonoBehaviour
     {
         GetTypeEnemy();
         int indexLeverEneymy = EnemyManager.Instance.IndexEnemyLever;
-        Debug.Log("index laf bao nhieu sau:" + indexLeverEneymy);
+        Debug.Log("file:DameReceive indexLeverEneymy :" + indexLeverEneymy);
         this._hpMax = EnemyManager.Instance.EnemySO[typeEnemy].leverEnemy[indexLeverEneymy].HpMax;
+        this._scoreEnemy = EnemyManager.Instance.EnemySO[typeEnemy].leverEnemy[indexLeverEneymy].Score;
         this._hPcurrent =this._hpMax;
         typeFx = 0;
     }
+
 
     public virtual void Deduct(float deduct)
     {
@@ -111,6 +135,7 @@ public class DameReceive : MonoBehaviour
         if (_hPcurrent <= 0)
         {
             Destroy(transform.parent.gameObject);
+            gameManager.UpdateScore(this._scoreEnemy);
             Transform newprefab = FXSpawner.Instance.Spawn(transform.parent.position, typeFx);
             newprefab.gameObject.SetActive(true);
         }

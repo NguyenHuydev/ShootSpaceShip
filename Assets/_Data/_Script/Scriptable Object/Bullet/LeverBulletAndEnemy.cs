@@ -16,5 +16,12 @@ public class LeverEnemy
 {
     public string NameLeverEnemy;
     public float HpMax;
+    public int Score;
+
+}
+[Serializable]
+public class AllData
+{
+    public int highScore;
 
 }

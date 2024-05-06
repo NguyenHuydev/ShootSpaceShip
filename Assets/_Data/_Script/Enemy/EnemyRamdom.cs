@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyRamdom : MonoBehaviour
 {
@@ -37,6 +38,9 @@ public class EnemyRamdom : MonoBehaviour
         this.RealTimer = 0;
         EnemySpawning();
     }  
+  
+
+    
 
     protected virtual void EnemySpawning()
     {
