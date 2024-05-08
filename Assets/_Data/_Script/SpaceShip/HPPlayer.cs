@@ -3,20 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SliderHp : MonoBehaviour
+
+public class HPPlayer : MonoBehaviour
 {
     [SerializeField] protected Slider sliderhp;
     [SerializeField] protected float maxHp;
     [SerializeField] protected float currentHp;
-    [SerializeField] protected EnemyDameReceive damReceiveEnemy;
-
-
+    [SerializeField] protected ShipDameReceive shipDameReceive;
 
     protected void Awake()
     {
         LoadComponent();
     }
-
     protected void FixedUpdate()
     {
         HPShowing();
@@ -25,7 +23,7 @@ public class SliderHp : MonoBehaviour
     private void LoadComponent()
     {
         LoadSilerhp();
-        LoaddamReceiveEnemy();
+        LoaddamReceivePlayer();
     }
     private void LoadSilerhp()
     {
@@ -33,26 +31,27 @@ public class SliderHp : MonoBehaviour
         sliderhp = GetComponent<Slider>();
         if (sliderhp == null) Debug.Log("sliderhp of Scrpit SliderHP NUll");
     }
-    private void LoaddamReceiveEnemy()
+    private void LoaddamReceivePlayer()
     {
-        if (damReceiveEnemy != null) return;
-        damReceiveEnemy = FindObjectOfType<EnemyDameReceive>();
-        if (damReceiveEnemy == null) Debug.Log("damReceiveEnemy of Scrpit SliderHP NUll");
+        if (shipDameReceive != null) return;
+        shipDameReceive = FindObjectOfType<ShipDameReceive>();
+        if (shipDameReceive == null) Debug.Log("shipDameReceive of Scrpit SliderHP NUll");
     }
 
     protected void HPShowing()
     {
-        this.maxHp = damReceiveEnemy.HPMAx;
-        this.currentHp = damReceiveEnemy.HPcurrent;
+        this.maxHp = shipDameReceive.HPMAx;
+        this.currentHp = shipDameReceive.HPcurrent;
         float hpPercent = this.currentHp / this.maxHp;
         this.sliderhp.value = hpPercent;
+        
     }
-/*    public virtual void SetMaxhp(float Maxhp)
-    {
-        this.maxHp = Maxhp;
-    }
-    public virtual void SetCurrenthp(float currentHp)
-    {
-        this.currentHp = currentHp;
-    }*/
+    /*    public virtual void SetMaxhp(float Maxhp)
+        {
+            this.maxHp = Maxhp;
+        }
+        public virtual void SetCurrenthp(float currentHp)
+        {
+            this.currentHp = currentHp;
+        }*/
 }

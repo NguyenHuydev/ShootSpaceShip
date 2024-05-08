@@ -8,7 +8,7 @@ public class PlayScenesManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("LoadRound1", 10f);
+        Invoke("LoadRound1", 2f);
     }
 
     void LoadRound1()

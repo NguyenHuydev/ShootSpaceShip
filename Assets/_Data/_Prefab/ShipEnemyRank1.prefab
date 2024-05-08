@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 3582963565512608474}
   - component: {fileID: 2958147301362415610}
   m_Layer: 5
-  m_Name: CanvasHP
+  m_Name: CanvasHPEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -257,9 +257,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2622872585403337124}
-  - component: {fileID: 7867238661341045617}
+  - component: {fileID: 7370789642360176786}
   m_Layer: 0
-  m_Name: SpawnBullet
+  m_Name: SpawnBulletEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -273,15 +273,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3478078397649497499}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.218, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2019837910243423791}
+  m_Children: []
   m_Father: {fileID: 1657961001037117149}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7867238661341045617
+--- !u!114 &7370789642360176786
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -290,13 +289,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3478078397649497499}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5f7169062ee9644b9d576fbeb01d89b, type: 3}
+  m_Script: {fileID: 11500000, guid: 953f29ae18773e44ba0c6f07e45eb964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullerEnemy: {fileID: 142333307626324991, guid: 69be4b994778d124aa573dc7eaff5f33, type: 3}
-  holder: {fileID: 2019837910243423791}
   timeDelay: 3
   realTime: 0
+  _spawnBulletEnemy: {fileID: 0}
 --- !u!1 &3494596152836141596
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,7 +394,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1657961001037117149
 Transform:
   m_ObjectHideFlags: 0
@@ -503,9 +501,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   circleCollider: {fileID: 7358704526330459373}
   rigidbodyBullet: {fileID: 4879016004291362428}
-  typeEnemy: 0
   _hPcurrent: 0
   _hpMax: 0
+  typeEnemy: 0
   _scoreEnemy: 0
   typeFx: 0
 --- !u!58 &7358704526330459373
@@ -540,9 +538,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.009580195, y: 0}
+  m_Offset: {x: -0.011907935, y: 0}
   serializedVersion: 2
-  m_Radius: 0.21477461
+  m_Radius: 0.21992522
 --- !u!50 &4879016004291362428
 Rigidbody2D:
   serializedVersion: 4
@@ -570,37 +568,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!1 &4889416555363407181
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2019837910243423791}
-  m_Layer: 0
-  m_Name: Holder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2019837910243423791
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4889416555363407181}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2622872585403337124}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5390472244103742315
 GameObject:
   m_ObjectHideFlags: 0
@@ -780,7 +747,7 @@ RectTransform:
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.594, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -957,8 +924,8 @@ RectTransform:
   m_Father: {fileID: 479909235115870304}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.594, y: 0}
+  m_AnchorMax: {x: 0.594, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

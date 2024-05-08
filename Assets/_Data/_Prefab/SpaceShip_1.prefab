@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7400013536892357892}
-  - component: {fileID: 6690978176939423026}
-  - component: {fileID: 2110153950793689676}
-  - component: {fileID: 1668182925933641915}
+  - component: {fileID: 4875879852584971904}
+  - component: {fileID: 5056051538903661918}
+  - component: {fileID: 3567342170622115283}
   m_Layer: 0
   m_Name: ShipDameReceive
   m_TagString: Untagged
@@ -27,14 +27,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2228703702907705640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.037, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6321764290616591709}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &6690978176939423026
+--- !u!50 &4875879852584971904
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -61,7 +61,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &2110153950793689676
+--- !u!58 &5056051538903661918
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,25 +95,23 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.05
---- !u!114 &1668182925933641915
+  m_Radius: 0.30447286
+--- !u!114 &3567342170622115283
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2228703702907705640}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29134d2bc62030541884aa210c05bda9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circleCollider: {fileID: 2110153950793689676}
-  rigidbodyBullet: {fileID: 6690978176939423026}
-  typeEnemy: 0
+  circleCollider: {fileID: 5056051538903661918}
+  rigidbodyBullet: {fileID: 4875879852584971904}
   _hPcurrent: 0
   _hpMax: 0
-  typeFx: 0
 --- !u!1 &3529014947122122752
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,7 +235,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3649599158909617950}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d0fcae3874e96341a15ff224f34118b, type: 3}
   m_Name: 
@@ -278,7 +276,7 @@ Transform:
   - {fileID: 6227502127296423164}
   - {fileID: 7400013536892357892}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7778263194712688326
 GameObject:

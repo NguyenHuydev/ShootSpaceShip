@@ -15,4 +15,8 @@ public class EnemyDesSpawnerbyDistance : DesSpawner
         if (transform.position.y <= distance.y) return true; //
         return false;
     }
+    protected override void DesSpawnObject()
+    {
+        EnemySpawner.Instance.DesPawnOfPool(transform.parent);
+    }
 }

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class EnemyRamdom : MonoBehaviour
 {
+    [SerializeField] private int SpawnerCount;
     [SerializeField] protected float TimeDelay = 1f;
     [SerializeField] protected float RealTimer = 0f;
     [SerializeField] protected int limitMeterite = 20; // limit spawn meteorite
@@ -13,13 +14,18 @@ public class EnemyRamdom : MonoBehaviour
     [SerializeField] protected SpawnPoint spawnPointRanDom;
 
     /// ////
-
+    /******************************************************************************/
     protected void Awake()
     {
        LoadComponent();
         
 
     }
+    protected void Start()
+    {
+        SpawnerCount = 0;
+    }
+    /******************************************************************************/
     private void LoadComponent()
     {
         LoadSpawnPoint();
@@ -38,21 +44,18 @@ public class EnemyRamdom : MonoBehaviour
         this.RealTimer = 0;
         EnemySpawning();
     }  
-  
-
-    
-
     protected virtual void EnemySpawning()
     {
         if (!this.RandomReachLimit()) return; // check Enemy spawn has reached limit
         Transform ranpoint = spawnPointRanDom.GetRamdomPoint();// Position of point 
         Transform newprefab = EnemySpawner.Instance.Spawn(ranpoint.position, typeMeterite);
+        SpawnerCount++;
         newprefab.gameObject.SetActive(true);
     }
 
     protected virtual bool RandomReachLimit()
     {
-        if(EnemySpawner.Instance.SpawnerCount >=limitMeterite) return false;
+        if(SpawnerCount >= limitMeterite) return false;
         return true;
     }
 

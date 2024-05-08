@@ -9,10 +9,8 @@ public class BulletEnemyMove : MonoBehaviour
 
     protected void Start()
     {
-        speedBulletEnemy = 0.2f;
+        speedBulletEnemy = 3f;
     }
-
-
     private void Update()
     {
         BullMove();// huong di chuyen cua vien dan

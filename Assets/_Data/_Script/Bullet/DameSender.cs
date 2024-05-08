@@ -20,13 +20,13 @@ public class DameSender : MonoBehaviour
     public virtual void Send(Transform obj)
     {
         //DameReceive dameRecevie = obj.GetComponent<DameReceive>();
-        DameReceive dameRecevie = obj.GetComponentInChildren<DameReceive>();
+        EnemyDameReceive dameRecevie = obj.GetComponentInChildren<EnemyDameReceive>();
         if (dameRecevie == null) return;
 
         this.Send(dameRecevie);
     }
 
-    public virtual void Send(DameReceive dameRecevie)
+    public virtual void Send(EnemyDameReceive dameRecevie)
     {
         dameRecevie.Deduct(BulletManager.Instance.BulletDamege);
         this.DestroyObject();
