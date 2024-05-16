@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class RandomBulletEnemy : MonoBehaviour
 {
+    [Header("RandomBulletEnemy")]
     [SerializeField] protected float timeDelay = 3f;
     [SerializeField] protected float realTime = 0f;
 
-    [SerializeField] private SpawnBulletEnemy _spawnBulletEnemy;
+    [SerializeField] protected SpawnBulletEnemy _spawnBulletEnemy;
 
     protected void Awake()
     {
@@ -20,7 +21,7 @@ public class RandomBulletEnemy : MonoBehaviour
     {
         Spawn_BulletEnemy();
     }
-    protected void Spawn_BulletEnemy()
+    private void Spawn_BulletEnemy()
     {
         this.realTime += Time.fixedDeltaTime;
         if (this.realTime < this.timeDelay) return;

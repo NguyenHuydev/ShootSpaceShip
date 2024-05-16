@@ -15,7 +15,27 @@ MonoBehaviour:
   IdBuller: 0
   image: {fileID: 0}
   leverbullet:
+  - NameLever: 0
+    damege: 3
+    speedfly: 30
+    speedfire: 0.05
   - NameLever: 1
+    damege: 3
+    speedfly: 30
+    speedfire: 0.05
+  - NameLever: 2
+    damege: 3
+    speedfly: 30
+    speedfire: 0.05
+  - NameLever: 3
+    damege: 3
+    speedfly: 30
+    speedfire: 0.05
+  - NameLever: 4
+    damege: 3
+    speedfly: 30
+    speedfire: 0.05
+  - NameLever: 5
     damege: 3
     speedfly: 30
     speedfire: 0.05

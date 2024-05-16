@@ -15,6 +15,16 @@ public class BulletManager : MonoBehaviour
     public int IndexBullet => _indexBullet;
     [SerializeField] protected int _indexBulletLever;
     public int IndexBulletLever => _indexBulletLever;
+    public void GetIndexBulletLever(int index)
+    {
+        int count = BulletSO[this._indexBullet].leverbullet.Count;
+        if (_indexBulletLever < count-1)
+        {
+            _indexBulletLever += index;
+
+        }
+        
+    }
     [SerializeField] private float _bulletDamege;
     public float BulletDamege => _bulletDamege;
     [SerializeField] private float _bulletSpeedFly;

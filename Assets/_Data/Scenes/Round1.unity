@@ -152,9 +152,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 183baa1cb70ab6e4c86b78ff0d7b883c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpawnerCount: 0
   TimeDelay: 1
   RealTimer: 0
-  limitMeterite: 20
+  limitMeterite: 50
   typeMeterite: 0
   spawnPointRanDom: {fileID: 0}
 --- !u!4 &142375745

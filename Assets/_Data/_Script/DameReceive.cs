@@ -11,11 +11,13 @@ public class DameReceive : MonoBehaviour
     [SerializeField] protected Rigidbody2D rigidbodyBullet;
 
     /*=========================================================================*/
+    [Header("DameReceive")]
     [SerializeField] protected float _hPcurrent;
     public float HPcurrent => _hPcurrent;
 
     [SerializeField] protected float _hpMax;
     public float HPMAx => _hpMax;
+
     /*=========================================================================*/
     private void Reset()
     {

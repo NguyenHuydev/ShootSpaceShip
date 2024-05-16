@@ -8,6 +8,12 @@ public class EnemyDesSpawnerbyDistance : DesSpawner
     [SerializeField] protected float distance = 0f; //  
     // Start is called before the first frame update
 
+    [SerializeField] protected EnemyRamdom enemyrandom;
+
+    private void Awake()
+    {
+        LoadEnemyRandom();
+    }
     protected override bool CanDesSpawn()
     {
 
@@ -18,5 +24,13 @@ public class EnemyDesSpawnerbyDistance : DesSpawner
     protected override void DesSpawnObject()
     {
         EnemySpawner.Instance.DesPawnOfPool(transform.parent);
+        enemyrandom._numberEnemy--;
+    }
+
+    protected void LoadEnemyRandom()
+    {
+        if (enemyrandom != null) return;
+        enemyrandom = FindObjectOfType<EnemyRamdom>();
+        if (enemyrandom == null) Debug.LogWarning("enemyrandom of scrpit EnemyRamdom NULL ");
     }
 }

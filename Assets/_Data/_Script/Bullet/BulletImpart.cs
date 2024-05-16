@@ -53,7 +53,6 @@ public class BulletImpart : MonoBehaviour
     {
         if(collision.name == "DameReceive")
         {
-            Debug.Log(collision.name);
             this.dameSender.Send(collision.transform);
         }
         
