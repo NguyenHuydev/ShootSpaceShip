@@ -80,7 +80,9 @@ public class EnemyRamdom : MonoBehaviour
 
     protected void GamePlay()
     {
-        if(SpawnerCount <= 3 && _numberEnemy <=5)
+        //SpawnerCount is Enemy have Spawn
+        //_numberEnemy is Limit Enemy Spawn in scenes
+        if (SpawnerCount <= 60 && _numberEnemy <=7)
         {
             this.RealTimer += Time.fixedDeltaTime;
             if (this.RealTimer < this.TimeDelay) return;

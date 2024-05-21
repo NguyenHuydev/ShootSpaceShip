@@ -16,5 +16,5 @@ MonoBehaviour:
   nameEnemy: EnemyBoss2
   leverEnemy:
   - NameLeverEnemy: 1
-    HpMax: 1000
+    HpMax: 2000
     Score: 200

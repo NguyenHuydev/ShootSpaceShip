@@ -9,7 +9,7 @@ public class BulletEnemyMove : MonoBehaviour
 
     protected void Start()
     {
-        speedBulletEnemy = 1f;
+        speedBulletEnemy = 4f;
     }
     private void Update()
     {
